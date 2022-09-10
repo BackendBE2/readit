@@ -43,19 +43,25 @@
         </div>
         <div class="row block-9 no-gutters">
             <div class="col-lg-6 order-md-last d-flex">
-                <form action="#" class="bg-light p-4 p-md-5 contact-form">
+                <form method="post" class="bg-light p-4 p-md-5 contact-form">
+                    {% csrf_token %}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name">
+{#                        <input type="text" class="form-control" placeholder="Your Name">#}
+                            {{ form.name }}
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Email">
+{#                        <input type="text" class="form-control" placeholder="Your Email">#}
+                        {{ form.email }}
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Subject">
+{#                        <input type="text" class="form-control" placeholder="Subject">#}
+                        {{ form.subject }}
                     </div>
                     <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="7" class="form-control"
-                                  placeholder="Message"></textarea>
+{#                        <textarea name="" id="" cols="30" rows="7" class="form-control"#}
+{#                                  placeholder="Message"></textarea>#}
+                        {{ form.message }}
+
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -68,47 +74,4 @@
         </div>
     </div>
 </section>
-<div id="ftco-loader" class="show fullscreen">
-    <svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00"/>
-    </svg>
-</div>
-
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js%2bpopper.min.js%2bbootstrap.min.js.pagespeed.jc.RBFfyp-nte.js"></script>
-<script>eval(mod_pagespeed_qcL_6881BX);</script>
-<script>eval(mod_pagespeed_ydsl4cdfHa);</script>
-<script>eval(mod_pagespeed_OFxX3c850J);</script>
-<script src="js/jquery.easing.1.3.js%2bjquery.waypoints.min.js%2bjquery.stellar.min.js%2bowl.carousel.min.js.pagespeed.jc.JPoq4oqrbk.js"></script>
-<script>eval(mod_pagespeed_RrJrXcA2BN);</script>
-<script>eval(mod_pagespeed_iReT0fckTI);</script>
-<script>eval(mod_pagespeed_1pBzn$onrS);</script>
-<script>eval(mod_pagespeed_ybtqMEoT_m);</script>
-<script src="js/jquery.magnific-popup.min.js%2baos.js%2bjquery.animateNumber.min.js%2bscrollax.min.js%2bgoogle-map.js%2bmain.js.pagespeed.jc.aUmw5lFzKm.js"></script>
-<script>eval(mod_pagespeed_Pz3mrJ_63m);</script>
-<script>eval(mod_pagespeed_W6d3NjFla2);</script>
-<script>eval(mod_pagespeed_QjqI0dlp4G);</script>
-<script>eval(mod_pagespeed_vv5V0CCUE2);</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
-<script>eval(mod_pagespeed_LeCa8CcN8X);</script>
-<script>eval(mod_pagespeed_dSHmgkmKhk);</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23581568-13');
-</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
-        integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
-        data-cf-beacon='{"rayId":"742e2efcac358b33","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.8.0","si":100}'
-        crossorigin="anonymous"></script>
 {% endblock %}
