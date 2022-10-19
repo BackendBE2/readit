@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 
 class Category(models.Model):
     title = models.CharField(max_length=221)
@@ -31,6 +31,11 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+    @property
+    def get_image_url(self):
+        if settings.DEBUG:
+            return f'http://127.0.0.1:8000/{self.image.url}'
+        return f"https://sfsfs.uz/{self.image.url}"
 
 
 
